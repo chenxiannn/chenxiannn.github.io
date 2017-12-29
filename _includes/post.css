@@ -55,7 +55,7 @@ H4 {
     padding: 2% 8% 5% 8%;
     border: 1px solid LightGrey;
 }
-
+ul {margin:0; padding:0;} 
 
 li {
     margin-left: 10px;

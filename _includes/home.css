@@ -31,7 +31,7 @@ body.mobile {
     cursor: pointer;
     padding: 15px 20px;
 }
-
+ul {margin:0; padding:0;} 
 li.title:hover {
     background-color: #eee;
     font-size: 100%;
@@ -81,9 +81,9 @@ body.mobile div.outer {
     text-align: center;
 }
 .footer-info{
-    margin-top: 30px;
+    margin-top: 40px;
     text-align: center;
-    font-size: 10px;
+    font-size: 12px;
 }
 
 
