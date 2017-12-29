@@ -8,12 +8,11 @@ layout: default
             <a href="/about.html"><img src="/images/Logo.png"/></a>
         </div>
         <div class="panel panel-default">
-            <div class="panel-heading">博客</div>
             <!-- List group -->
             {% for post in site.categories.blog %}
-                <li class="list-group">
-                  <a href="{{ post.url }}" class="list-group-item title">{{ post.title }}</a>
-                </li>
+                <ul class="list-group">
+                  <li class="list-group-item title"><a href="{{ post.url }}" target="_blank">{{ post.title }}</a></li>
+                </ul>
             {% endfor %}
         </div>
         <div align="center">
