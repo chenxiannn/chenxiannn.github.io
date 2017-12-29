@@ -10,13 +10,13 @@ category:   the-little-heat-design
 
 对于理想空气的密度计算
 
-![](/assets/Formula_S5_F1.jpg)
+![](assets/Formula_S5_F1.jpg)
 
 其中p为压强\[Pa\]，1Pa=1N/m^2，T为开尔文温度\[K\]， T=摄氏温度+273.15，,Ri为气体常数\[J/kgK\]，其中干燥的空气系数Ri=287.05J/kgK 。
 
 假定环境气压为p=101325Pa\(标准大气压\)，绝对湿度为6g水/1kg空气，那么干燥空气密度与湿空气密度如图1所示，从中可以得出，干燥空气与潮湿空气的密度相差很小。
 
-[![](/assets/Cover_Heat_S5_E1.png)](散热设计5_海拔对风路系统影响分析-EIT Lab博客_files/Cover_Heat_S5_E1.png)
+[![](assets/Cover_Heat_S5_E1.png)](散热设计5_海拔对风路系统影响分析-EIT Lab博客_files/Cover_Heat_S5_E1.png)
 
 ##### **图1.空气密度随温度变化**
 
@@ -30,21 +30,21 @@ category:   the-little-heat-design
 
 海拔对温度影响的计算公式为：
 
-![](/assets/Formula_S5_F2.jpg)
+![](assets/Formula_S5_F2.jpg)
 
 h为海拔高度\[m\]，T0=摄氏温度+273.15 ,0m海拔下的开尔文温度。
 
 海拔对大气压强影响的计算公式为：
 
-![](/assets/Formula_S5_F3.jpg)
+![](assets/Formula_S5_F3.jpg)
 
 海拔对空气密度影响的计算公式为：
 
-![](/assets/Formula_S5_F4.jpg)
+![](assets/Formula_S5_F4.jpg)
 
 由上面三个公式可以得到图2，海拔对空气密度，压强和温度影响。
 
-![](/assets/Cover_Heat_S5_E2.png)
+![](assets/Cover_Heat_S5_E2.png)
 
 ##### **图2.海拔高度对空气密度，压强和温度影响**
 
@@ -113,13 +113,13 @@ h为海拔高度\[m\]，T0=摄氏温度+273.15 ,0m海拔下的开尔文温度。
 
 基于经验估计的话，**假设风扇转速不随空气密度变化而变化，**也就意味着在不同空气密度下，风扇的体积流量不变，风扇的静压和质量流量均与密度成正比，而风道特性随着空气密度增加，风阻也会增加，于是得到如图3所示。由此可以得到，**当空气密度发生变化时，风道工作点对应的体积流量不变。**
 
-![](/assets/Cover_Heat_S5_E3.png)
+![](assets/Cover_Heat_S5_E3.png)
 
 ##### **图3.空气密度对风道工作点的影响**
 
 基于试验测试的话，则是对整个风道在不同海拔和环境温度下，进行测试，AVC资料中提供的测试结果如图4所示。
 
-[![](/assets/Cover_Heat_S5_E4.png)](散热设计5_海拔对风路系统影响分析-EIT Lab博客_files/Cover_Heat_S5_E4.png)
+[![](assets/Cover_Heat_S5_E4.png)](散热设计5_海拔对风路系统影响分析-EIT Lab博客_files/Cover_Heat_S5_E4.png)
 
 ##### **图4.实验测试海拔对风道特性影响**
 

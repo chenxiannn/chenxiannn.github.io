@@ -39,7 +39,7 @@ category:   the-little-heat-design
 
 不要一上来觉得很难，其实风路设计和电路设计有很多的相似之处，你可以看下面这张风道的等效电路图：
 
-![](/assets/TEST1_8.png)
+![](assets/TEST1_8.png)
 
 ##### **图1.风道等效电路**
 
@@ -54,7 +54,7 @@ category:   the-little-heat-design
 
 和电路设计也有很多相似的地方，你可以看一下下面这张图：
 
-![](/assets/Cover_Heat_S0_E1.png)
+![](assets/Cover_Heat_S0_E1.png)
 
 ##### **图2.热路Cauer等效电路（符号请参考附注）**
 
@@ -62,13 +62,13 @@ category:   the-little-heat-design
 
 如果你还云里雾里，那看看散热器结构图3，一般发热都是功率器件\(Diode 或 IGBT\)，然后通过导热基板\(Base Plate是 功率器件的一部分，通过导热硅脂紧贴散热器\)，导热硅脂主要是用于减少接触热阻，最下面就是散热器Heatsink。
 
-![](/assets/Cover_Heat_S0_E2.png)
+![](assets/Cover_Heat_S0_E2.png)
 
 ##### **图3.功率器件与散热器结构图**
 
 散热的动态等效模型中有两种，一种是是图2中的Cauer等效电路，另一种是是图4中的Foster等效电路。
 
-![](/assets/Cover_Heat_S0_E3.png)
+![](assets/Cover_Heat_S0_E3.png)
 
 ##### **图4.热路Foster等效电路**
 
@@ -76,21 +76,21 @@ Cauer等效回路是基于实际物理特性实现对IGBT温度的瞬态效应�
 
 ABB或与英飞凌的技术文档里中IGBT Zth\(j-c\)的测试方法，均是通过饱和电压Vce-sat进行IGBT核心温度测量，具体测试流程如图5所示，先用恒功率对IGBT加热到核心温度Tj保持恒定，然后关断电流，在温度下降与上升过程中记录IGBT核心温度Tj\(t\)和基板温度Tc\(t\)。
 
-![](/assets/Cover_Heat_S0_E4.png)
+![](assets/Cover_Heat_S0_E4.png)
 
 ##### **图5.Zth\(j-c\)的测试**
 
 Zth\(j-c\)的计算公式为：
 
-![](/assets/formula0.gif)
+![](assets/formula0.gif)
 
 对Zth\(j-c\)进行指数曲线拟合，得到这样的表达，
 
-![](/assets/formula1.gif)
+![](assets/formula1.gif)
 
 在功率器件的数据手册中，只要描述出热阻和其对应的时间常数，即可拟合出对应的Zth\(j-c\)，描述如图6所示，用了四组参数进行拟合。
 
-![](/assets/Cover_Heat_S0_E5.png)
+![](assets/Cover_Heat_S0_E5.png)
 
 ##### **图6.Zth拟合示例**
 
@@ -98,7 +98,7 @@ Zth\(j-c\)的计算公式为：
 
 对于同一个热阻容散热系统，其相当于一个低通滤波器，频率高的热功率会被滤掉大部分，频率低的热功率会全部通过，所以这里涉及到热功率信号频率与散热系统的带宽概念，也就是我们前面说的Zth的。
 
-![](/assets/Cover_Heat_S0_E6.png)
+![](assets/Cover_Heat_S0_E6.png)
 
 ##### **图7.不同频率电流产生的热冲击**
 
