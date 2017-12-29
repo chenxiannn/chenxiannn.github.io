@@ -10,19 +10,19 @@ category:   the-little-heat-design
 
 由于机网侧损耗功率不一致，为了保证两边温升的一致，因此需要调节机网侧流量比，需要在网侧添加挡条，以提高网侧风阻。为了试验方便，测试方案如图1所示，共计6次试验。
 
-![](/assets/Cover_Heat_S3_E1.png)
+![](/images/the-little-heat-design/Cover_Heat_S3_E1.png)
 
 图1 挡条测试方案图
 
 测试好之后，我们会得到六组风阻曲线数据，大家一定要注意，在测试的过程中腔体是一直存在的，我们必须从测试数据中减去串联的腔体风阻，最后才是最终的风阻曲线。腔体风阻我们在散热设计2中已经求得。最后我们的到测试的风阻曲线如图2所示。
 
-![](/assets/Cover_Heat_S3_E2.png)
+![](/images/the-little-heat-design/Cover_Heat_S3_E2.png)
 
 图2 不同挡条下网侧风道风阻特性（横轴流量，纵轴压强）
 
 如果对网侧添加挡条以调节机网侧流量比，因为机网侧为并联，所以只需要求得同压强下，0cm挡条F0（机侧）与其他挡条Fn（网侧）的流量比即可，由此得到如图3所示。
 
-![](/assets/Cover_Heat_S3_E3.png)
+![](/images/the-little-heat-design/Cover_Heat_S3_E3.png)
 
 图3  同压强下，机网侧并联的流量比图
 
@@ -56,7 +56,7 @@ category:   the-little-heat-design
 5. 根据机网侧流量，算出散热器的热阻，乘以平均功率，即可得到散热器温升。
 6. 对比不同挡条下，机网侧散热器温升，结合之前得到的功率模块内部温升之和，找到最优化的方案。
 
-![](/assets/Cover_Heat_S1_E9.png)
+![](/images/the-little-heat-design/Cover_Heat_S1_E9.png)
 
 图7 风道工作点图
 

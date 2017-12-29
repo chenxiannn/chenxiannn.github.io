@@ -19,7 +19,7 @@ layout: default
             {% for cat in site.categories 
                 for post in cat%}
                     <li class="list-group-item title"><a href="{{ post.url }}" target="_blank">{{ post.title }}</a></li>
-                {% endfor 
+                {% endfor
             endfor %}
             </ul>
         </div>

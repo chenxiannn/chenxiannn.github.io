@@ -10,17 +10,17 @@ category:   the-little-heat-design
 
 根据英飞凌文档中给出的估算公式是平均功率，而多数IGBT的应用场合是方波损耗功率或者正弦半波损耗功率，不同功率损耗波形引起的温升变化如图1所示。
 
-![](/assets/Cover_Heat_S0_E6.png)图1 不同频率的温升变化
+![](/images/the-little-heat-design/Cover_Heat_S0_E6.png)图1 不同频率的温升变化
 
 方波的温升可以直接估算作图，然后求出方波周期与不同时间常数比下，热阻降低达到的比例因数，得到图2所示，由可以看出方波热功率周期很小时热阻趋近于0.5倍比例因子，较大时趋近于1倍因子。**方波的最大功率是平均功率的二倍。**
 
-![](/assets/Cover_Heat_S4_E1.png)
+![](/images/the-little-heat-design/Cover_Heat_S4_E1.png)
 
 图2矩形热冲击的估算因数（T0为热功率周期，ti为热网络时间常数）
 
 正弦半波温升估算没有理论公式，直接在Matlab仿真画出对应的热阻降低的比例因数曲线如图3所示，方波周期较小时趋于1/π倍。**正弦半波的最大功率是平均功率的**π**倍。**
 
-![](/assets/Cover_Heat_S4_E2.png)
+![](/images/the-little-heat-design/Cover_Heat_S4_E2.png)
 
 图3正弦半波热冲击的估算因数（T0为热功率周期，ti为热网络时间常数）
 
