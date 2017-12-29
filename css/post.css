@@ -110,10 +110,6 @@ img {
     max-width:100%;
 }
 
-img.displayed {
-    text-align: center;
-    display: block;
-}
 
 hr {
     color: LightGrey;
