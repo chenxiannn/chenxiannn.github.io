@@ -14,9 +14,14 @@
     <style>{% include post.css %}</style>
   </head>
   <body>
+    <script>
+        if (/mobile/i.test(navigator.userAgent) || /android/i.test(navigator.userAgent))
+        {
+            document.body.classList.add('mobile');
+        }
+     </script>
       <div class="inner">
         <h2 class="post-title">{{ page.title }}</h2>
-        <p class="post-date">{{ page.date|date:"%Y-%m-%d" }}</p>
         {{ content }}
       </div>
   </body>

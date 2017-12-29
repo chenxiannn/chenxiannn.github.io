@@ -3,6 +3,12 @@ layout: default
 ---
 
 <body>
+    <script>
+        if (/mobile/i.test(navigator.userAgent) || /android/i.test(navigator.userAgent))
+        {
+            document.body.classList.add('mobile');
+        }
+    </script>
   <div class="outer">
         <div class="web-logo">
             <a href="/about.html"><img src="/images/Logo.png"/></a>
