@@ -114,7 +114,7 @@ img {
     margin-top: 10px;
     margin-bottom: 10px;
     -webkit-box-shadow: 0 0 10px #555;
-    width:auto;
+    max-width:100%;
 }
 
 img.displayed {
