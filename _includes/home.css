@@ -15,7 +15,7 @@ body {
 }
 
 body.mobile {
-    font-size: 22px;
+    font-size: 18px;
 }
 
 .navbar-brand {
@@ -81,9 +81,9 @@ body.mobile div.outer {
     text-align: center;
 }
 .footer-info{
-    margin-top: 40px;
+    margin-top: 60px;
     text-align: center;
-    font-size: 12px;
+    font-size: 13px;
 }
 
 
