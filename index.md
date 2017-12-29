@@ -16,11 +16,11 @@ layout: default
         <div class="panel panel-default">
             <!-- List group -->
             <ul class="list-group">
-            {% for cat in site.categories %}
-                {% for post in cat %}   
+            {% for cat in site.categories 
+                for post in cat%}
                     <li class="list-group-item title"><a href="{{ post.url }}" target="_blank">{{ post.title }}</a></li>
-                {% endfor %}
-            {% endfor %}
+                {% endfor 
+            endfor %}
             </ul>
         </div>
         <div class="footer-info">
