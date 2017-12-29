@@ -44,6 +44,12 @@ H4 {
     margin-bottom: 30px;
     line-height: 150%;
 }
+H5 {
+    margin-top: 20px;
+    margin-bottom: 20px;
+    line-height: 150%;
+    text-align:center;
+}
 
 .box {
     padding: 2% 8% 5% 8%;
