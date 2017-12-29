@@ -106,7 +106,9 @@ a:hover {
 
 
 img {
-    display: inline-block;
+    clear: both; 
+    display: block; 
+    margin:auto; 
     max-width:100%;
 }
 
