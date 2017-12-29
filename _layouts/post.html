@@ -23,6 +23,33 @@
       <div class="inner">
         <h2 class="post-title">{{ page.title }}</h2>
         {{ content }}
+        
+        <div class="comments" id="comments">
+            <div id="gitmentContainer" style="margin-bottom: -19px;"></div>
+            <link rel="stylesheet" href="https://imsun.github.io/gitment/style/default.css">
+            <style>
+            .gitment-container a {
+              border: none;
+            }
+            .comments {
+              margin: 60px 0 0;
+            }
+            </style>
+            <script src="https://imsun.github.io/gitment/dist/gitment.browser.js" type="text/javascript"></script>
+            <script type="text/javascript">
+                var gitment = new Gitment({
+                  id: '{{ page.title }}',
+                  title: 'Gitment：使用 GitHub Issues 搭建评论系统',
+                  owner: 'chenxiannn',
+                  repo: 'chenxiannn.github.io',
+                  oauth: {
+                    client_id: 'a9cfa9d01427201d766d',
+                    client_secret: '64d2ad0eb23c2b4cf75734b7bdf033c34ffd7cb8',
+                  },
+                })
+                gitment.render('gitmentContainer')
+            </script>
+            </div>
       </div>
   </body>
 </html>
