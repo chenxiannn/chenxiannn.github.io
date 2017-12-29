@@ -15,11 +15,13 @@ layout: default
         </div>
         <div class="panel panel-default">
             <!-- List group -->
-            {% for post in site.categories.blog %}
-                <ul class="list-group">
-                  <li class="list-group-item title"><a href="{{ post.url }}" target="_blank">{{ post.title }}</a></li>
-                </ul>
+            <ul class="list-group">
+            {% for cat in site.categories %}
+                {% for post in cat %}   
+                    <li class="list-group-item title"><a href="{{ post.url }}" target="_blank">{{ post.title }}</a></li>
+                {% endfor %}
             {% endfor %}
+            </ul>
         </div>
         <div class="footer-info">
             觅知圈@2018 无数科技 京ICP备17043614号-3
