@@ -14,7 +14,7 @@ category:   the-little-heat-design
 * 堵死机侧测试
 * 堵死网侧测试
 
-![](assets/Cover_Heat_S1_E5.png)
+![](/images/the-little-heat-design/Cover_Heat_S1_E5.png)
 
 ##### **图1.风道风阻测试方案**
 
@@ -41,7 +41,7 @@ P为压强\(psf\)，F为流量\(m^3/h\)
 
 风道测试试验按照图1进行，三次测试的风阻特性测试数据如图2所示
 
-[![](assets/Cover_Heat_S2_E1.png)](散热设计2_变频器风路风阻测试-EIT Lab博客_files/Cover_Heat_S2_E1.png)
+[![](/images/the-little-heat-design/Cover_Heat_S2_E1.png)](散热设计2_变频器风路风阻测试-EIT Lab博客_files/Cover_Heat_S2_E1.png)
 
 ##### **图2.测试数据图(横轴流量，纵轴压强)**
 
@@ -49,19 +49,19 @@ P为压强\(psf\)，F为流量\(m^3/h\)
 
 利用二次函数拟合对三次测试数据拟合得到如下方程：
 
-![](assets/formula_S2_F1.gif)
+![](/images/the-little-heat-design/formula_S2_F1.gif)
 
-![](assets/formula_S2_F2.gif)
+![](/images/the-little-heat-design/formula_S2_F2.gif)
 
-![](assets/formula_S2_F3.gif)
+![](/images/the-little-heat-design/formula_S2_F3.gif)
 
 现在问题就变成已知三个环节串并联的非线性特性 ，能否求解得到三个非线性特性 ，此问题可以抽象为数学中的一个简单泛函方程问题，即已知：
 
-![](assets/formula_S2_F4.gif)
+![](/images/the-little-heat-design/formula_S2_F4.gif)
 
-![](assets/formula_S2_F5.gif)
+![](/images/the-little-heat-design/formula_S2_F5.gif)
 
-![](assets/formula_S2_F6.gif)
+![](/images/the-little-heat-design/formula_S2_F6.gif)
 
 能否得到唯一的解函数 R1\(F\),R2\(F\)和R3\(F\)？
 
@@ -69,27 +69,27 @@ P为压强\(psf\)，F为流量\(m^3/h\)
 
 本文采用优化算法对泛函方程求解，根据常识知识，当P为0，F为0，所以对函数形式假设简化为为如下形式:
 
-![](assets/formula_S2_F7.gif)
+![](/images/the-little-heat-design/formula_S2_F7.gif)
 
-![](assets/formula_S2_F8.gif)
+![](/images/the-little-heat-design/formula_S2_F8.gif)
 
-![](assets/formula_S2_F9.gif)
+![](/images/the-little-heat-design/formula_S2_F9.gif)
 
 需要找到合适的 an和bn，求解的目标是使得R13\(F\)，R23\(F\)，R1\_23\(F\)的估计值与实测曲线误差最小，这里选取误差平方和作为优化目标。
 
 这样这个泛函方程的求解就可以表达为一个单目标的优化问题，优化向量空间为6维，即上面方程中的六个参数。
 
-![](assets/formula_S2_F10.gif)
+![](/images/the-little-heat-design/formula_S2_F10.gif)
 
 最终选用粒子群优化方法，得到的优化拟合结果如图2所示。
 
-[![](assets/Cover_Heat_S2_E2.png)](散热设计2_变频器风路风阻测试-EIT Lab博客_files/Cover_Heat_S2_E2.png)
+[![](/images/the-little-heat-design/Cover_Heat_S2_E2.png)](散热设计2_变频器风路风阻测试-EIT Lab博客_files/Cover_Heat_S2_E2.png)
 
 ##### **图2.拟合对比图(横轴流量，纵轴压强)**
 
 至此我们得到网侧通道，机侧通道和腔体的风阻特性曲线，如图3所示。
 
-![](assets/Cover_Heat_S2_E3.png)
+![](/images/the-little-heat-design/Cover_Heat_S2_E3.png)
 
 ##### **图3机侧，网侧和腔体风阻特性曲线(横轴流量，纵轴压强)**
 

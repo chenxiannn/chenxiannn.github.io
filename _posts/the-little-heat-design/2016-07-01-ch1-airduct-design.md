@@ -10,9 +10,9 @@ category:   the-little-heat-design
 
 在风路中，压强P对应电压，风阻R对应电阻，流量F对应电流，如图1所示。
 
-![](assets/formula_S1_F3.gif)
+![](/images/the-little-heat-design/formula_S1_F3.gif)
 
-![](assets/Cover_Heat_S1_E1.png)
+![](/images/the-little-heat-design/Cover_Heat_S1_E1.png)
 
 ##### **图1.风阻等效回路图**
 
@@ -24,9 +24,9 @@ category:   the-little-heat-design
 
 串联回路流量相同，因此需要在同流量下进行阻抗累加，因此采用图2所示进行计算，即
 
-![](assets/formula_S1_F4.gif)
+![](/images/the-little-heat-design/formula_S1_F4.gif)
 
-![](assets/Cover_Heat_S1_E2.png)
+![](/images/the-little-heat-design/Cover_Heat_S1_E2.png)
 
 ##### **图2.串联等效回路**
 
@@ -34,11 +34,11 @@ category:   the-little-heat-design
 
 并联回路风压相同，因此需要在同压强下进行风导累加，因此采用图3所示进行计算，即
 
-![](assets/formula_S1_F1.gif)
+![](/images/the-little-heat-design/formula_S1_F1.gif)
 
-其中![](assets/formula_S1_F2.gif)反函数
+其中![](/images/the-little-heat-design/formula_S1_F2.gif)反函数
 
-![](assets/Cover_Heat_S1_E3.png)
+![](/images/the-little-heat-design/Cover_Heat_S1_E3.png)
 
 ##### **图3并联等效回路**
 
@@ -48,7 +48,7 @@ category:   the-little-heat-design
 
 风扇相当于非线性电压源，随着流量增加，提供的风压逐渐下降，直至最后风压为0.当风扇和风道配合时，我们可以画出如图4所示的工作曲线图， 两者的交叉点就是整个系统的工作点，有相应的流量和风压，可以在这张图画出不同风扇工作点，然后选型或者优化风道。
 
-![](assets/Cover_Heat_S1_E7.png)
+![](/images/the-little-heat-design/Cover_Heat_S1_E7.png)
 
 ##### **图4风扇和风阻配合**
 
@@ -56,7 +56,7 @@ category:   the-little-heat-design
 
 风冷散热器风的流量最终会影响散热器的热阻，我们可以看一款散热器的热阻曲线，如图5所示，随着流量的增加，热阻会逐渐下降。
 
-![](assets/Cover_Heat_S1_E8.png)
+![](/images/the-little-heat-design/Cover_Heat_S1_E8.png)
 
 ##### **图5.散热器热阻曲线**
 
@@ -64,7 +64,7 @@ category:   the-little-heat-design
 
 要分析的变频器采用Back-Back，分机侧和网侧两路，后侧通过一个腔体，最终导出到排风扇，具体结构等效如图6所示。
 
-![](assets/Cover_Heat_S1_E4.png)
+![](/images/the-little-heat-design/Cover_Heat_S1_E4.png)
 
 ##### **图6变频器风路结构**
 
