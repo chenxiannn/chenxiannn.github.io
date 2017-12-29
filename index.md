@@ -10,7 +10,7 @@ layout: default
         <div class="panel panel-default">
             <div class="panel-heading">博客</div>
             <!-- List group -->
-             {% for post in site.categories.blog %}
+            {% for post in site.categories.blog %}
                 <li class="list-group">
                   <a href="{{ post.url }}" class="list-group-item title">{{ post.title }}</a>
                 </li>
