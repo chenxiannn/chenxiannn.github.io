@@ -82,8 +82,8 @@ body.mobile div.outer {
 }
 .footer-info{
     margin-top: 30px;
-    align:center;
-    font-size: 15px;
+    text-align: center;
+    font-size: 10px;
 }
 
 

@@ -30,6 +30,8 @@ H2 {
     margin-top: 60px;
     margin-bottom: 40px;
     padding: 5px;
+    border-bottom: 2px LightGrey solid;
+    width: 98%;
     line-height: 150%;
 }
 
@@ -90,7 +92,6 @@ code {
 a {
     text-decoration: none;
     cursor: crosshair;
-    color: #930ee4;
 }
 
 
