@@ -1,6 +1,6 @@
 theme: jekyll-theme-cayman
 
-permalink: /:categories/:title
+permalink: /:categories/:title.html
 
 title: 觅知圈-觅的精彩 知而不凡
 url: https://blog.mizhiquan.com/
