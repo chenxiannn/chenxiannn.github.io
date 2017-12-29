@@ -14,7 +14,7 @@ category:   the-little-heat-design
 
 ![](/images/the-little-heat-design/Cover_Heat_S1_E1.png)
 
-图1 风阻等效回路图
+##### **图1.风阻等效回路图**
 
 由于流体的非线性因素远远大于电路，因此不能简单地用线性系统描述，不考虑动态特性，仅考虑风道的静态非线性阻抗特性。非线性特性元件串并联不能简单的对阻抗进行公式计算，
 
@@ -28,7 +28,7 @@ category:   the-little-heat-design
 
 ![](/images/the-little-heat-design/Cover_Heat_S1_E2.png)
 
-图2 串联等效回路
+##### **图2.串联等效回路**
 
 两个风道并联在一起，同时通风，计算总风阻。
 
@@ -40,7 +40,7 @@ category:   the-little-heat-design
 
 ![](/images/the-little-heat-design/Cover_Heat_S1_E3.png)
 
-图3 并联等效回路
+##### **图3并联等效回路**
 
 知道了风阻原理，我们就可以对变频器进行分析和测试了。
 
@@ -50,22 +50,21 @@ category:   the-little-heat-design
 
 ![](/images/the-little-heat-design/Cover_Heat_S1_E7.png)
 
-图4 风扇和风阻配合
+##### **图4风扇和风阻配合**
 
 ### **5.散热器热阻**
 
 风冷散热器风的流量最终会影响散热器的热阻，我们可以看一款散热器的热阻曲线，如图5所示，随着流量的增加，热阻会逐渐下降。
 
-### ![](/images/the-little-heat-design/Cover_Heat_S1_E8.png)
+![](/images/the-little-heat-design/Cover_Heat_S1_E8.png)
 
-图5 散热器热阻曲线
+##### **图5.散热器热阻曲线**
 
-**  
-6.变频器风路结构**
+### **6.变频器风路结构**
 
 要分析的变频器采用Back-Back，分机侧和网侧两路，后侧通过一个腔体，最终导出到排风扇，具体结构等效如图6所示。
 
 ![](/images/the-little-heat-design/Cover_Heat_S1_E4.png)
 
-图6变频器风路结构
+##### **图6变频器风路结构**
 

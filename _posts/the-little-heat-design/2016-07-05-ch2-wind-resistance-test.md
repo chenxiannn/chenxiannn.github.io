@@ -16,7 +16,7 @@ category:   the-little-heat-design
 
 ![](/images/the-little-heat-design/Cover_Heat_S1_E5.png)
 
-图1风道风阻测试方案
+##### **图1.风道风阻测试方案**
 
 为方便处理，做如下设定：
 
@@ -43,7 +43,7 @@ P为压强\(psf\)，F为流量\(m^3/h\)
 
 [![](/images/the-little-heat-design/Cover_Heat_S2_E1.png)](散热设计2_变频器风路风阻测试-EIT Lab博客_files/Cover_Heat_S2_E1.png)
 
-图2测试数据图（横轴流量，纵轴压强）
+##### **图2.测试数据图(横轴流量，纵轴压强)**
 
 ### **2.风道测试数据分析**
 
@@ -85,13 +85,13 @@ P为压强\(psf\)，F为流量\(m^3/h\)
 
 [![](/images/the-little-heat-design/Cover_Heat_S2_E2.png)](散热设计2_变频器风路风阻测试-EIT Lab博客_files/Cover_Heat_S2_E2.png)
 
-图2 拟合对比图（横轴流量，纵轴压强）
+##### **图2.拟合对比图(横轴流量，纵轴压强)**
 
 至此我们得到网侧通道，机侧通道和腔体的风阻特性曲线，如图3所示。
 
 ![](/images/the-little-heat-design/Cover_Heat_S2_E3.png)
 
-图3机侧，网侧和腔体风阻特性曲线（横轴流量，纵轴压强）
+##### **图3机侧，网侧和腔体风阻特性曲线(横轴流量，纵轴压强)**
 
 **结论：**
 
