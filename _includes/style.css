@@ -1,3 +1,40 @@
+* {
+    box-sizing: border-box;
+}
+
+/* reset CSS */
+table {	
+    font-size: 100%;
+}
+/* end reset CSS */
+
+body {
+    font-family:"lucida grande", "lucida sans unicode", lucida, helvetica, "Hiragino Sans GB", "Microsoft YaHei", "WenQuanYi Micro Hei", sans-serif;
+    font-size: 18px;
+}
+
+li {
+    margin-left: 10px;
+}
+li.title:hover {
+    background-color: #eee;
+    font-size: 100%;
+}
+div.inner {
+    margin: 0% 14%;
+    padding: 2% 8% 4% 8%; 
+    border: 1px solid LightGrey;
+}
+a {
+    text-decoration: none;
+    cursor: crosshair;
+    border-bottom: 1px dashed orange;
+    color: #930ee4;
+}
+
+a:hover {
+    background-color: LightGrey;
+}
 .web-logo {
     margin-top: 50px;
     margin-bottom: 50px;
@@ -16,7 +53,3 @@
     padding: 15px 20px;
 }
 
-li.title:hover {
-    background-color: #eee;
-    font-size: 100%;
-}
