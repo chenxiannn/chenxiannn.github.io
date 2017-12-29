@@ -21,9 +21,8 @@ layout: default
                 </ul>
             {% endfor %}
         </div>
-        <div align="center">
-            <small>觅知圈@2018 无数科技</small>
-            <small>京ICP备17043614号-3</small>
+        <div class="footer-info">
+            觅知圈@2018 无数科技 京ICP备17043614号-3
         </div>
     </div>
 </body>

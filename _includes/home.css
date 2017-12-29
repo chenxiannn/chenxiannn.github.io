@@ -11,11 +11,11 @@ table {
 
 body {
     font-family: STFangSong, Helvetica, Arial, Vernada, Tahoma, STXihei, "Microsoft YaHei", "Songti SC", SimSun, Heiti, sans-serif;
-    font-size: 18px;
+    font-size: 20px;
 }
 
 body.mobile {
-    font-size: 24px;
+    font-size: 22px;
 }
 
 .navbar-brand {
@@ -79,6 +79,11 @@ body.mobile div.outer {
     margin-top: 50px;
     margin-bottom: 50px;
     text-align: center;
+}
+.footer-info{
+    margin-top: 30px;
+    align:center;
+    font-size: 15px;
 }
 
 

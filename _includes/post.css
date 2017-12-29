@@ -14,7 +14,7 @@ body {
 }
 
 body.mobile {
-    font-size: 24px;
+    font-size: 18px;
 }
 
 P {
@@ -27,13 +27,10 @@ H1 {
 
 H2 {
     font-family: "Palatino Linotype", "Book Antiqua", Palatino, Helvetica, STKaiti, SimSun, serif;
-    margin-bottom: 60px;
+    margin-top: 60px;
     margin-bottom: 40px;
     padding: 5px;
-    border-bottom: 2px LightGrey solid;
-    width: 98%;
     line-height: 150%;
-    color: #666666;
 }
 
 
@@ -41,10 +38,7 @@ H3 {
     font-family: "Palatino Linotype", "Book Antiqua", Palatino, Helvetica, STKaiti, SimSun, serif;
     margin-top: 40px;
     margin-bottom: 30px;
-    border-bottom: 1px LightGrey solid;
-    width: 98%;
     line-height: 150%;
-    color: #666666;
 }
 
 
@@ -52,10 +46,7 @@ H4 {
     font-family: "Palatino Linotype", "Book Antiqua", Palatino, Helvetica, STKaiti, SimSun, serif;
     margin-top: 40px;
     margin-bottom: 30px;
-    border-bottom: 1px LightGrey solid;
-    width: 98%;
     line-height: 150%;
-    color: #666666;
 }
 
 .box {
@@ -99,7 +90,6 @@ code {
 a {
     text-decoration: none;
     cursor: crosshair;
-    border-bottom: 1px dashed orange;
     color: #930ee4;
 }
 
