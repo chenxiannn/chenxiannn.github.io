@@ -1,6 +1,6 @@
 ---
 layout:     post
-title:      散热设计0-热设计简单简介
+title:      散热设计0-热设计基础介绍
 category:   the-little-heat-design
 ---
 
