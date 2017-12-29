@@ -31,10 +31,7 @@ body.mobile {
     cursor: pointer;
     padding: 15px 20px;
 }
-ul {
-    margin-bottom:10px; 
-    margin-left:10px; 
-    padding:0;} 
+
 li.title:hover {
     background-color: #eee;
     font-size: 100%;
