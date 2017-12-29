@@ -1,10 +1,25 @@
----
-layout: default
----
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <title>{% if page.title %}{{ page.title }} | {% endif %}{{ site.title }}</title>
+    <meta name="author" content="三郎" />
+    <meta name="renderer" content="webkit">
+    <meta name="description" content="觅知圈-觅的精彩 知而不凡" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, minimum-scale=1.0">
+    <link rel="shortcut icon" href="/favicon.ico" type="image/x-icon" />
+    <link rel="alternate" type="application/atom+xml" title="Recent Entries" href="{{ site.feed }}" />
 
-<div class="container">
-    <h1 class="post-title"><a href="{{ page.url }}" title="{{ page.title }}">{{ page.title }}</a></h1>
-    <p class="post-date">{{ page.date|date:"%Y-%m-%d" }}</p>
-    {{ content }}
-</div>
+    <style>{% include bootstrap.min.css %}</style>
+    <style>{% include post.css %}</style>
+  </head>
+  <body>
+      <div class="inner">
+        <h2 class="post-title">{{ page.title }}</h2>
+        <p class="post-date">{{ page.date|date:"%Y-%m-%d" }}</p>
+        {{ content }}
+      </div>
+  </body>
+</html>
+
     

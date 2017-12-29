@@ -3,7 +3,7 @@ layout: default
 ---
 
 <body>
-  <div class="container">
+  <div class="outer">
         <div class="web-logo">
             <a href="/about.html"><img src="/images/Logo.png"/></a>
         </div>
