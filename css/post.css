@@ -4,7 +4,7 @@
 
 /* reset CSS */
 table {	
-    font-size: 100%;
+    font-size: 80%;
     border-right:1px solid LightGrey;
     border-bottom:1px solid LightGrey;
 }
@@ -12,7 +12,10 @@ td {
     border-left:1px solid LightGrey;
     border-top:1px solid LightGrey;
 }
-
+th{
+    padding-left:5px;
+    padding-right:5px;
+}
 /* end reset CSS */
 
 body {
