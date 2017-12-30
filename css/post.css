@@ -5,18 +5,19 @@
 /* reset CSS */
 table {	
     font-size: 80%;
+    text-align: center;
     border-right:1px solid LightGrey;
     border-bottom:1px solid LightGrey;
-    
 }
 td {
     border-left:1px solid LightGrey;
     border-top:1px solid LightGrey;
 }
-th,tr{
-    margin-left:5px;
-    margin-right:5px;
-    text-align: center;
+th{
+    border-left:1px solid LightGrey;
+    border-top:1px solid LightGrey;
+    
+    
 }
 
 /* end reset CSS */
