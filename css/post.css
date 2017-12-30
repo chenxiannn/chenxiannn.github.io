@@ -108,13 +108,6 @@ code {
     font-family: Inconsolata, Consolas, "DEJA VU SANS MONO", "DROID SANS MONO", Proggy, monospace;
 }
 
-
-a {
-    text-decoration: none;
-    cursor: crosshair;
-}
-
-
 a:hover {
     background-color: LightGrey;
 }
