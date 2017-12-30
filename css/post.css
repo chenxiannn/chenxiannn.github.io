@@ -185,3 +185,15 @@ body.mobile div.ad-banner {
 .side-ad.mobile {
     display: none;
 }
+
+.web-logo {
+    margin-top: 50px;
+    margin-bottom: 50px;
+    text-align: center;
+}
+.footer-info{
+    margin-top: 60px;
+    text-align: center;
+    font-size: 13px;
+}
+
