@@ -22,8 +22,6 @@ layout: default
                 {% endfor %}
             </ul>
         </div>
-        <div class="footer-info">
-            觅知圈@2018 无数科技 京ICP备17043614号-3
-        </div>
+        {% include footer.html %}
     </div>
 </body>
