@@ -5,13 +5,14 @@
 /* reset CSS */
 table {	
     font-size: 90%;
-    margin:20 auto ;
+    margin:auto;
     border-right:1px solid LightGrey;
     border-bottom:1px solid LightGrey;
 }
 td {
     border-left:1px solid LightGrey;
     border-top:1px solid LightGrey;
+   text-align:center;
 }
 th{
     border-left:1px solid LightGrey;
