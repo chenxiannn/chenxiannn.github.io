@@ -4,8 +4,8 @@
 
 /* reset CSS */
 table {	
-    font-size: 80%;
-    text-align: center;
+    font-size: 90%;
+    margin:20 auto ;
     border-right:1px solid LightGrey;
     border-bottom:1px solid LightGrey;
 }
