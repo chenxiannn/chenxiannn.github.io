@@ -10,9 +10,7 @@ layout: default
         }
     </script>
   <div class="outer">
-        <div class="web-logo">
-            <a href="/about.html"><img src="/images/Logo.png"/></a>
-        </div>
+        {% include header.html %}
         <div class="panel panel-default">
             <!-- List group -->
             <ul class="list-group">
