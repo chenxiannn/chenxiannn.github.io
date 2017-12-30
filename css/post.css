@@ -5,7 +5,14 @@
 /* reset CSS */
 table {	
     font-size: 100%;
+    border-right:1px solid LightGrey;
+    border-bottom:1px solid LightGrey;
 }
+td {
+    border-left:1px solid LightGrey;
+    border-top:1px solid LightGrey;
+}
+
 /* end reset CSS */
 
 body {
