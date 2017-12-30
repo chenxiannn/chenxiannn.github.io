@@ -1,6 +1,6 @@
 ---
 layout:     post
-title:      散热设计5-ch5-海拔对风道设计分析
+title:      散热设计5-海拔对风道系统影响分析
 category:   the-little-heat-design
 ---
 
