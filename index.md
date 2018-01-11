@@ -17,6 +17,9 @@ layout: default
                 {% for post in site.categories.blog %}
                 <li class="list-group-item title"><a href="{{ post.url }}" target="_blank">{{ post.title }}</a></li>
                 {% endfor %}
+                {% for post in site.categories.the-little-embedded-system %}
+                <li class="list-group-item title"><a href="{{ post.url }}" target="_blank">{{ post.title }}</a></li>
+                {% endfor %}
                 {% for post in site.categories.the-little-heat-design %}
                 <li class="list-group-item title"><a href="{{ post.url }}" target="_blank">{{ post.title }}</a></li>
                 {% endfor %}
