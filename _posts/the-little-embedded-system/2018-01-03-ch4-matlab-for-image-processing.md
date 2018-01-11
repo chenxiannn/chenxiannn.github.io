@@ -1,6 +1,6 @@
 ---
 layout:     post
-title:      ch4-Matlab处理和验证图像算法
+title:      嵌入式小书4-Matlab处理和验证图像算法
 category:   the-little-embedded-system
 ---
 

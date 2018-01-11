@@ -1,6 +1,6 @@
 ---
 layout:     post
-title:      ch3-嵌入式平台软件搭建
+title:      嵌入式小书3-嵌入式平台软件搭建
 category:   the-little-embedded-system
 ---
 

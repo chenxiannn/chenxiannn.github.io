@@ -1,6 +1,6 @@
 ---
 layout:     post
-title:      ch6-系统测试与分析
+title:      嵌入式小书6-系统测试与分析
 category:   the-little-embedded-system
 ---
 

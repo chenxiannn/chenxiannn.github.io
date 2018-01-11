@@ -1,6 +1,6 @@
 ---
 layout:     post
-title:      ch1-系统分层设计
+title:      嵌入式小书1-系统分层设计
 category:   the-little-embedded-system
 ---
 #### 1.分层与模块化

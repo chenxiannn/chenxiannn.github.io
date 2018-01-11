@@ -1,6 +1,6 @@
 ---
 layout:     post
-title:      ch2-机械与硬件设计部分
+title:      嵌入式小书2-机械与硬件设计部分
 category:   the-little-embedded-system
 ---
 

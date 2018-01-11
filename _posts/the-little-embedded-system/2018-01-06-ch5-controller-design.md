@@ -1,6 +1,6 @@
 ---
 layout:     post
-title:      ch5-转速和转向控制器设计
+title:      嵌入式小书5-转速和转向控制器设计
 category:   the-little-embedded-system
 ---
 
