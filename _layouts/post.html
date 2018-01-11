@@ -22,7 +22,7 @@
      </script>
       <div class="inner">
         <h2 class="post-title">{{ page.title }}</h2>
-        <h5 class="post-title">{{ page.date | date: "%Y-%m-%d" }}</h5>
+        <h5 class="post-date">{{ page.date | date: "%Y-%m-%d" }}</h5>
         {{ content }}
         {% include comment.html %}
       </div>
