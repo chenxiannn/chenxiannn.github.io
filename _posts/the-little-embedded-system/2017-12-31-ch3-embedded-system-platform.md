@@ -4,13 +4,13 @@ title:      嵌入式小书3-嵌入式平台软件搭建
 category:   the-little-embedded-system
 ---
 
-#### 1.从任务调度说起
+### 1.从任务调度说起
 
 最开始我们在单片机写代码的样子是怎样的呢？在ch1那一章我们对模块和分层进行了讨论，模块是对功能代码的封装，分层是在平台层面封装，都是在解决项目复杂度控制的问题，但是我们拿单片机最主要的目的是来执行任务Task帮我们做事的，比如读取ADC采样数据，读取键盘按键，输出PWM，I2C通讯，运行PID控制，等等。
 
 那在单片机里如何组织任务调度的设计？
 
-##### 大循环调度
+#### 大循环调度
 
 最初的最初，我们的任务调度简单直接——也就是大循环方式，示例代码如下：
 
@@ -46,9 +46,11 @@ void Task0_Run(void)
 * 随着任务数量的增加，系统会越来越慢
 * 如果遇上长时间任务，会拖累整个系统变慢
 
-![](/images/the-little-embedded-system/EmbeddedSystem_S3_P0.png)图1.大循环任务调度图
+![](/images/the-little-embedded-system/EmbeddedSystem_S3_P0.png)
 
-##### 定时任务调度
+##### 图1.大循环任务调度图
+
+#### 定时任务调度
 
 为了克服大循环方式的缺点（任务调度周期性无法保证，任务数量增加系统会变慢），提出了定时的任务调度的方式，不过需要使用单片机一个定时器，来实现一个简单的任务调度器，利用定时器将CPU切割为一个等周期的时间片调度单元，然后利用标志位控制在每个时间片只调用一个任务。整个系统代码结构如下所示：
 
@@ -115,7 +117,9 @@ void Task0_Run(void)
 2. 对于严格实时的控制周期任务，定时调度器不能够保证
 3. 对于长周期任务（比如通讯等待等），定时任务调度器要么把任务切割为小任务，要么安排几个连续的空闲周期来执行
 
-![](/images/the-little-embedded-system/EmbeddedSystem_S3_P1.png)图2.定时任务调度图
+![](/images/the-little-embedded-system/EmbeddedSystem_S3_P1.png)
+
+##### 图2.定时任务调度图
 
 针对第1点，需要测试或者预估任务的最长执行时间，这个可以采用IO测试的方式解决（具体参见ch6）。
 
@@ -141,15 +145,19 @@ void Task_SpeedPID_Control(void)
 
 针对第3点，我们可以将长周期任务放在最后面，如图3所示，可以把最后几个空闲周期都留给Task4执行。但是要注意，如果有多个长周期任务，依然会拖慢整个调度周期，于是就出现了基于优先级的任务调度方式，高优先级的任务可以中断低优先级的任务，在保证长周期任务调度的同时，短周期任务的调度依然能够保证，这就是RTOS。
 
-![](/images/the-little-embedded-system/EmdeddedSystem_S3_P2.png)图3.长周期调度方式
+![](/images/the-little-embedded-system/EmdeddedSystem_S3_P2.png)
 
-##### 实时操作系统RTOS调度
+##### 图3.长周期调度方式
+
+#### 实时操作系统RTOS调度
 
 实时操作系统，常用的小型RTOS有uCosII，FreeRTOS，Rt-thread，主要是任务优先级的调度方式不一样，这里感兴趣的同学，可以参见相关的专业书籍，对RTOS内核代码不做详细介绍。RTOS的对任务的调度方式如图4所示。Task0的优先级高，可以中断优先级低的Task1，等Task0执行完，然后RTOS会切换到Task1继续执行。
 
-![](/images/the-little-embedded-system/EmdeddedSystem_S3_P3.png)图4.RTOS任务调度方式图
+![](/images/the-little-embedded-system/EmdeddedSystem_S3_P3.png)
 
-#### 2.智能车总体任务调度
+##### 图4.RTOS任务调度方式图
+
+### 2.智能车总体任务调度
 
 智能车调度平台总体上只有两个任务SpeedControlTask和ControlGraphTask，考虑到系统简单，没有用RTOS和任务调度器，直接中断配合While实现，代码示例如下，运行时序如图5所示。
 
@@ -211,11 +219,13 @@ void PIT0_IRQHandler(void)
 }
 ```
 
-![](/images/the-little-embedded-system/EmdeddedSystem_S3_P4.png)图5.系统任务时序图
+![](/images/the-little-embedded-system/EmdeddedSystem_S3_P4.png)
+
+##### 图5.系统任务时序图
 
 总体思路就是，每一幅图像的帧中断VSYNC触发PORTA\_handler\(PA29\)中断函数，此时ImageOver清零，同时DMA开始传输图像，当DMA传输结束触发DMA0\_IRQHandler中断，此时ImageOver=1，如果ControlGraphTask检测到的话，那就开始执行，如果ControlGraphTask在VSYNC到来清零ImageOver之前没有开始执行的话，那只能等待下一次DMA中断。最终测试结果，每两帧触发一次ControlGraphTask执行，控制周期为13.33ms。
 
-#### 3.嵌入式驱动层设计
+### 3.嵌入式驱动层设计
 
 嵌入式驱动层大部分复用了Vcan山外的板级库，新加入比较重要的库有EITMotorL，EITMotor\_R，EIT\_Steer和EIT\_Log，封装在EITLib文件夹，总体的思路就是，.h负责接口，.c负责功能实现。
 

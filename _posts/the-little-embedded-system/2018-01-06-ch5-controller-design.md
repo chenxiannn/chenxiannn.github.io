@@ -4,7 +4,7 @@ title:      嵌入式小书5-转速和转向控制器设计
 category:   the-little-embedded-system
 ---
 
-#### 1.转速PID控制
+### 1.转速PID控制
 
 关于PID控制器的解释可以看看知乎的这篇回答[https://www.zhihu.com/question/23088613](https://www.zhihu.com/question/23088613)
 
@@ -31,7 +31,7 @@ PID控制器应该怎么设计，各种玩家各种玩法，
 
 ![](/images/the-little-embedded-system/EmbeddedSystem_S5_P0.png)
 
-图1.车速开环阶跃响应测试图
+##### 图1.车速开环阶跃响应测试图
 
 根据这张阶跃响应测试图，我们就可以用1阶或者2阶模型去做建模，传递函数形式：
 
@@ -45,7 +45,7 @@ PID控制器应该怎么设计，各种玩家各种玩法，
 
 ![](/images/the-little-embedded-system/EmbeddedSystem_S5_P3.png)
 
-图2.建模测试对比图（蓝色实测，红色建模）
+##### 图2.建模测试对比图（蓝色实测，红色建模）
 
 下一步就是搭建PID控制模块，我们直接来上Simulink仿真模型图，如图3所示，PI控制器的控制效果图如图4所示。
 
@@ -57,13 +57,13 @@ PID控制器应该怎么设计，各种玩家各种玩法，
 
 ![](/images/the-little-embedded-system/EmbeddedSystem_S5_P4.png)
 
-图3.控制模型图
+##### 图3.控制模型图
 
 这里要简单说一下，在反馈回路加了三个部件，一个是Delay环节，因为我们10ms测一次速度，延时一半5ms，RateTransition ZOH是采样率转换，因为前后两级采样率不一致，必须加一个零阶保持器，FIR Filter是均值滤波器，4阶，把车速的高频抖动滤除掉再进控制器。
 
 ![](/images/the-little-embedded-system/EmbeddedSystem_S5_P8.png)
 
-图4.PI控制效果图（浅绿色线就是控制效果图，阶跃响应的上升时间从4s降到0.8s左右，效果还可以）
+##### 图4.PI控制效果图（浅绿色线就是控制效果图，阶跃响应的上升时间从4s降到0.8s左右，效果还可以）
 
 下面重点介绍一下PI Controller，之所以没有加D微分，因为实测速度抖动太厉害，再加微分不抖死呀，目前PI用着就不错。PI的控制模型用的是：
 
@@ -86,7 +86,7 @@ PID控制器应该怎么设计，各种玩家各种玩法，
 
 ![](/images/the-little-embedded-system/EmbeddedSystem_S5_P7.png)
 
-图5.PI Controller设置
+##### 图5.PI Controller设置
 
 下面我们就看看代码吧：
 
@@ -201,7 +201,7 @@ gParam.MOtroR_PID_DnRate = -2000;/*指令最大m/s^2*/
 
 整个速度控制的Simulink模型和C代码已经上传到[github](https://github.com/chenxiannn/SmartCarSpeedControl-PI)。
 
-#### 2.转向PD控制器
+### 2.转向PD控制器
 
 没有用什么高大上的算法，就是用最基本的，好使够用。之前在ch4节中，我们通过对赛道图像处理得到了3个gDir的偏差值，分别为gDir\_Near，\_gDir\_Mid和gDir\_Far，大概含义如图6所示。分别选择不同远近区域的中线偏差做平均得到。
 
@@ -211,7 +211,7 @@ gParam.MOtroR_PID_DnRate = -2000;/*指令最大m/s^2*/
 
 ![](/images/the-little-embedded-system/EmbeddedSystem_S5_P9.png)
 
-图6.三个gDir的计算区域
+##### 图6.三个gDir的计算区域
 
 整体控制，就将所有赛道路况就分为2种，一种就是直道，另一种就是弯道，根据gDir\_Far以及它的变化率进行识别，具体代码如下：
 
@@ -354,5 +354,7 @@ void SteerDirControl(void)
 
 整体的控制思路如图7所示，没有什么过于复杂的地方，都是简单不能再简单的最小系统实现，基本的PID控制配合滤波器，简单的找中线处理，配合上Matlab/Simulink后，工作效率会大大提高。
 
-![](/images/the-little-embedded-system/EmbeddedSystem_S5_P10.png)图7.整体控制思路图
+![](/images/the-little-embedded-system/EmbeddedSystem_S5_P10.png)
+
+##### 图7.整体控制思路图
 

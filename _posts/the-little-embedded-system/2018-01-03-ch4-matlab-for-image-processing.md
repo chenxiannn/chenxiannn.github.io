@@ -4,7 +4,7 @@ title:      嵌入式小书4-Matlab处理和验证图像算法
 category:   the-little-embedded-system
 ---
 
-#### **1.先聊聊基于模型的设计**
+### **1.先聊聊基于模型的设计**
 
 可以先看看知乎这篇文章《[基于模型设计——电力电子的利器](https://zhuanlan.zhihu.com/p/23149544)》
 
@@ -34,7 +34,7 @@ category:   the-little-embedded-system
 
 在改进版中，matlab中验证的是matlab代码，车上跑的是C代码，由于这中间存在人工转化的过程，意味着依然可能会引入未知的错误。为何不直接在matlab里直接验证我的C代码呢？对了，这就是交叉编译，在matlab里直接调用C语言，OK，这样就能保证最终车里跑的代码，是在matlab里最终验证通过的了，Yeah。下面我们就跟着老司机一起开车喽。
 
-#### 2**.交叉编译环境搭建**
+### 2**.交叉编译环境搭建**
 
 Matlab 的软件版本推荐2011a（我比较钟爱老版本，哈哈，因为占地小）
 
@@ -183,15 +183,15 @@ void mexFunction ( int nlhs, mxArray *plhs[], int nrhs, const mxArray *prhs[] )
 }
 ```
 
-#### 3.智能车比赛图像处理
+### 3.智能车比赛图像处理
 
-图像处理模块的结构图如图7所示，其中图像处理部分主要是imProc完成，与Matlab的mex接口由imCar完成。
+图像处理模块的结构图如图1所示，其中图像处理部分主要是imProc完成，与Matlab的mex接口由imCar完成。
 
 ![](/images/the-little-embedded-system/EmbeddedSystem_S1_P2.png)
 
-图7.图像处理模块结构图
+##### 图1.图像处理模块结构图
 
-整个图像处理模块imProc的内部结构如图8所示，输入信号为图像数据Image\_Data（用于寻找中线），Speed和寻找到的中线接合起来用于计算方向偏差，之所以要跟速度相关，因为车速快了的话，需要用更远的图像信息去计算方向偏差，加大提前量，近了则用更近的图像数据去计算，最终计算的中线偏差有三个值：
+整个图像处理模块imProc的内部结构如图2所示，输入信号为图像数据Image\_Data（用于寻找中线），Speed和寻找到的中线接合起来用于计算方向偏差，之所以要跟速度相关，因为车速快了的话，需要用更远的图像信息去计算方向偏差，加大提前量，近了则用更近的图像数据去计算，最终计算的中线偏差有三个值：
 
 * gDir\_Near：近距离方向偏差，暂时未使用
 * gDir\_Mid：中距离方向偏差，主要用于转向PD控制
@@ -199,7 +199,7 @@ void mexFunction ( int nlhs, mxArray *plhs[], int nrhs, const mxArray *prhs[] )
 
 ![](/images/the-little-embedded-system/EmbeddedSystem_S4_P7.png)
 
-图8.imProc模块图
+##### 图2.imProc模块图
 
 整个代码实现了一个基本的寻线处理和计算中线偏差的思路，具体过程如下：
 
@@ -369,11 +369,11 @@ mex -I"../ControlLib/Inc" ...,%包含ControlParam.h
     ../ControlLib/ControlParam.c%编译ControlParam.c文件
 ```
 
-将matlab的工作目录设置为Graphic，然后运行Compile.m，默认选择的是txt文本图像（Image\_txt文件夹），1分钟之后，127张图像就全部处理结束啦（在Image\_txt下的solve文件下），速度是不是很快呀，哈哈哈，如图10所示。然后你就可以针对不同的路况，去优化算法，立刻就可以在Matlab上验证，知道所有的路况全部验证通过之后，再把代码烧到单片机里，进行真实赛道测试。
+将matlab的工作目录设置为Graphic，然后运行Compile.m，默认选择的是txt文本图像（Image\_txt文件夹），1分钟之后，127张图像就全部处理结束啦（在Image\_txt下的solve文件下），速度是不是很快呀，哈哈哈，如图3所示。然后你就可以针对不同的路况，去优化算法，立刻就可以在Matlab上验证，知道所有的路况全部验证通过之后，再把代码烧到单片机里，进行真实赛道测试。
 
 ， ![](/images/the-little-embedded-system/EmbeddedSystem_S4_P10.png)、
 
-图10.处理结果
+##### 图3.处理结果
 
 这里要提一下，Graphic下目前有两个保存图像的文件夹，分别为Image\__txt_和Image\_bmp\_，\_Image\_Txt是我们用串口再赛道上每隔10cm采集的部分图像，Image\_bmp是山外自带的bmp格式图像。大家可以根据自己情况自由选择图片格式。
 

@@ -3,7 +3,7 @@ layout:     post
 title:      嵌入式小书1-系统分层设计
 category:   the-little-embedded-system
 ---
-#### 1.分层与模块化
+### 1.分层与模块化
 
 说起分层，让我想起了大学刚毕业去的那家小公司，当时自己维护空调控制板，代码是前辈做的，功能相当棒，但是当我看到代码的那一刻，差点吐血，因为整个代码就两个文件shuikongtiao.c和shuikongtiao.h，里面的变量和函数定义全部用汉语拼音，哈哈哈，一万只草泥马从心中飞过。我擦，终于见识到了国产一线小厂的实力水平。看到代码的那一刻，就在想，这玩意居然好使，写代码的人是爽了，维护者怎么搞呀，一个.c文件上万行。当然这些都是内心戏，说出来，前辈肯定把我废了。
 
@@ -162,11 +162,13 @@ int main(int argc,char**argv)
 
 随着系统功能进一步复杂，输入设备会有各种各样，输出设备与模式也会有各种各样的适配，为了控制系统的复杂度，会进一步进行分层，整体的进化流程就如图1所示。
 
-![](/images/the-little-embedded-system/EmbeddedSystem_S1_P0.png)图1.模块与分层进化图
+![](/images/the-little-embedded-system/EmbeddedSystem_S1_P0.png)
+
+##### 图1.模块与分层进化图
 
 其实说到底，最初其分成几个函数，到后面的模块化，再到最后的分层设计，都是在简化系统的复杂度，做到局部可控，这样才能hold住全场，让我们同一时刻只关注有限的信息量，毕竟都是人类，谁能一下子接受那么多code，更何况是凌乱的呢。善待code，善待自己，请从模块和分层开始。其实分层不是绝对的完美，所有的分层都会带来效率的降低，比如额外增加的函数调用时间损耗，但是为了可读性和可维护性，牺牲一点效率又能怎么样呢。不过千万不要过度分层，那是在装逼，不是在设计。
 
-#### 2.整个系统的总体设计
+### 2.整个系统的总体设计
 
 智能车系统的模块与分层划分，总体上分为三层，如图2所示。
 
@@ -178,9 +180,9 @@ int main(int argc,char**argv)
 
 ![](/images/the-little-embedded-system/EmbeddedSystem_S1_P1.png)
 
-图2.整体系统模块结构图
+##### 图2.整体系统模块结构图
 
-##### 控制与图像层
+### 控制与图像层
 
 系统中图像处理模块图如图3所示，主要实现图像的处理，寻找中线，以及与Matlab2011a和VS2010配合实现对算法的快速仿真验证，大大提高开发效率，后文会重点介绍这里。
 
@@ -191,7 +193,7 @@ int main(int argc,char**argv)
 
 ![](/images/the-little-embedded-system/EmbeddedSystem_S1_P2.png)
 
-图3.图像处理模块图
+##### 图3.图像处理模块图
 
 系统中控制算法部分的模块图如图4所示，主要负责实现转速和转向控制，其中转速控制会结合Matlab/Simulink 进行仿真，寻找合理的PI控制参数，后面会详细展开如何设计PI控制器。
 
@@ -208,9 +210,9 @@ Control子模块介绍：
 
 ![](/images/the-little-embedded-system/EmbeddedSystem_S1_P3.png)
 
-图4.控制算法模块图
+##### 图4.控制算法模块图
 
-##### 嵌入式平台层
+### 嵌入式平台层
 
 嵌入式平台层，负责整个嵌入式软件系统的初始化，信号采集以及驱动执行，模块结构如图5所示，其中本小书会详细介绍EITLIb库中的电机驱动与编码器和摄像头采集部分。
 
@@ -225,13 +227,15 @@ Control子模块介绍：
 
 ![](/images/the-little-embedded-system/EmbeddedSystem_S1_P4.png)
 
-图5.嵌入式平台模块结构图
+##### 图5.嵌入式平台模块结构图
 
 **硬件与机械层**
 
 硬件采用山外的K60核心板，其他部分，控制核心板和驱动电源板都是自制。模块结构如图6所示，其中主要的是Power，Camera，Motor，Sensor，LCD和Key模块图。
 
-![](/images/the-little-embedded-system/EmbeddedSystem_S1_P5.png)图6.系统硬件结构图
+![](/images/the-little-embedded-system/EmbeddedSystem_S1_P5.png)
+
+##### 图6.系统硬件结构图
 
 机械部分在ch2再做介绍。
 
