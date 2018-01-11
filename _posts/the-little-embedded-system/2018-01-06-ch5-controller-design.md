@@ -1,3 +1,9 @@
+---
+layout:     post
+title:      ch5-转速和转向控制器设计
+category:   the-little-embedded-system
+---
+
 #### 1.转速PID控制
 
 关于PID控制器的解释可以看看知乎的这篇回答[https://www.zhihu.com/question/23088613](https://www.zhihu.com/question/23088613)
@@ -23,21 +29,21 @@ PID控制器应该怎么设计，各种玩家各种玩法，
 
 测试结束后，我们会在Matlab中画出这样一张车速随时间变化，如图1所示，最后凹下去一大坑又飚起来，是因为车走到终点被抓住速度降了，拿起来空转速度又飚起来了。
 
-![](/assets/EmbeddedSystem_S5_P0.png)
+![](/images/the-little-embedded-system/EmbeddedSystem_S5_P0.png)
 
 图1.车速开环阶跃响应测试图
 
 根据这张阶跃响应测试图，我们就可以用1阶或者2阶模型去做建模，传递函数形式：
 
-![](/assets/EmbeddedSystem_S5_P1.png)
+![](/images/the-little-embedded-system/EmbeddedSystem_S5_P1.png)
 
 在这里选的二阶模型建模，Wn=1.5rad/s，zeta=1.6，最终拟合出来的系统模型是：
 
-![](/assets/EmbeddedSystem_S5_P2.png)
+![](/images/the-little-embedded-system/EmbeddedSystem_S5_P2.png)
 
 在Simulink搭建模型，同样加阶跃响应，可以测试得到实测图与仿真模型的对比结果，如图2所示。
 
-![](/assets/EmbeddedSystem_S5_P3.png)
+![](/images/the-little-embedded-system/EmbeddedSystem_S5_P3.png)
 
 图2.建模测试对比图（蓝色实测，红色建模）
 
@@ -49,23 +55,23 @@ PID控制器应该怎么设计，各种玩家各种玩法，
 * Set PWM：测试设定PWM值（量程-1000至1000）
 * Set Speed：设定速度数据（单位为cm/s）
 
-![](/assets/EmbeddedSystem_S5_P4.png)
+![](/images/the-little-embedded-system/EmbeddedSystem_S5_P4.png)
 
 图3.控制模型图
 
 这里要简单说一下，在反馈回路加了三个部件，一个是Delay环节，因为我们10ms测一次速度，延时一半5ms，RateTransition ZOH是采样率转换，因为前后两级采样率不一致，必须加一个零阶保持器，FIR Filter是均值滤波器，4阶，把车速的高频抖动滤除掉再进控制器。
 
-![](/assets/EmbeddedSystem_S5_P8.png)
+![](/images/the-little-embedded-system/EmbeddedSystem_S5_P8.png)
 
 图4.PI控制效果图（浅绿色线就是控制效果图，阶跃响应的上升时间从4s降到0.8s左右，效果还可以）
 
 下面重点介绍一下PI Controller，之所以没有加D微分，因为实测速度抖动太厉害，再加微分不抖死呀，目前PI用着就不错。PI的控制模型用的是：
 
-![](/assets/EmbeddedSystem_S5_P5.png)
+![](/images/the-little-embedded-system/EmbeddedSystem_S5_P5.png)
 
 离散化后的差分方程（采用欧拉前向差分）是：
 
-![](/assets/EmbeddedSystem_S5_P6.png)
+![](/images/the-little-embedded-system/EmbeddedSystem_S5_P6.png)
 
 对应到Simulink的PI Controller模块设置，下面图5中的几处设置，务必要注意：
 
@@ -78,7 +84,7 @@ PID控制器应该怎么设计，各种玩家各种玩法，
 * Integral\(I\)：积分系数=2.5
 * Compensator formula：模块公式与我们上面的差分公式一模一样，**Kp=P，Ki=I**
 
-![](/assets/EmbeddedSystem_S5_P7.png)
+![](/images/the-little-embedded-system/EmbeddedSystem_S5_P7.png)
 
 图5.PI Controller设置
 
@@ -203,7 +209,7 @@ gParam.MOtroR_PID_DnRate = -2000;/*指令最大m/s^2*/
 * gDir\_Mid：用于方向PD跟踪控制
 * gDir\_Near：暂时未使用
 
-![](/assets/EmbeddedSystem_S5_P9.png)
+![](/images/the-little-embedded-system/EmbeddedSystem_S5_P9.png)
 
 图6.三个gDir的计算区域
 
@@ -348,5 +354,5 @@ void SteerDirControl(void)
 
 整体的控制思路如图7所示，没有什么过于复杂的地方，都是简单不能再简单的最小系统实现，基本的PID控制配合滤波器，简单的找中线处理，配合上Matlab/Simulink后，工作效率会大大提高。
 
-![](/assets/EmbeddedSystem_S5_P10.png)图7.整体控制思路图
+![](/images/the-little-embedded-system/EmbeddedSystem_S5_P10.png)图7.整体控制思路图
 

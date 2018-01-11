@@ -1,4 +1,8 @@
-#### 
+---
+layout:     post
+title:      ch2-机械与硬件设计部分
+category:   the-little-embedded-system
+---
 
 #### 1.硬件布线
 
@@ -8,7 +12,7 @@
 
 比如一个电源给两个器件供电，一个工作电流10mA，一个工作电流10A，我们看下面图1中两种接线方式有啥区别？？？？？
 
-![](/assets/EmbeddedSystem_S2_P1.png)
+![](/images/the-little-embedded-system/EmbeddedSystem_S2_P1.png)
 
 图1.两种接线方式理想电路图（红色为正，蓝色为负）
 
@@ -16,7 +20,7 @@
 
 这里我要提醒大家啦，注意连线，那都是铜线，不是超导体，拿起小本子要记住啦，铜线也有阻抗，PCB布线也有阻抗。考虑进来，之后的图就是下面这样子图2所示。
 
-![](/assets/EmbeddedSystem_S2_P2.png)
+![](/images/the-little-embedded-system/EmbeddedSystem_S2_P2.png)
 
 图2.考虑线路阻抗的等效电路图
 
@@ -31,13 +35,13 @@
 
 于是我们的电路布局图就成为这个样子图3所示，大功率和小功率分布布局，大功率的地和电源尽可能从靠近电源的正负极直接引线，这样大功率器件对其他小功率器件的影响能够降到最小。
 
-![](/assets/EmbeddedSystem_S2_P3.png)
+![](/images/the-little-embedded-system/EmbeddedSystem_S2_P3.png)
 
 图3.大功率与小功率分开布局
 
 下面我的电路继续升级，加入了PWM数字开关器件，还有一些小的器件，大家有没有想过，这样玩，会不会有啥问题。。。
 
-![](/assets/EmbeddedSystem_S2_P4.png)
+![](/images/the-little-embedded-system/EmbeddedSystem_S2_P4.png)
 
 图4.添加小器件和数字开关PWM部件
 
@@ -45,7 +49,7 @@
 
 于是图4就会进化到图5，虽然丑了点，是效果好呀！！！
 
-![](/assets/EmbeddedSystem_S2_P5.png)
+![](/images/the-little-embedded-system/EmbeddedSystem_S2_P5.png)
 
 图5.电源和地贴着走布局图
 
@@ -58,7 +62,7 @@
 
 智能车电路为例，整体电路分为三部分，电机驱动，舵机，控制电路，总体布线如图6所示，三大部分彻底分开，尤其是电机驱动这块，流大电流。
 
-![](/assets/EmbeddedSystem_S2_P0.png)图6.智能车PCB布线图
+![](/images/the-little-embedded-system/EmbeddedSystem_S2_P0.png)图6.智能车PCB布线图
 
 电机驱动阻抗分析：
 
@@ -70,13 +74,13 @@ C车模相对好一些，电机内阻900m欧，加上电池内阻，电源线，
 
 聊完硬件布线，我们再聊聊直流电机，说简单点就是给它加直流电压，那它就转，比如图1的电路，一个开关K就可以控制电机转动和停止。
 
-![](/assets/EmbeddedSystem_S2_P6.png)
+![](/images/the-little-embedded-system/EmbeddedSystem_S2_P6.png)
 
 图7.开关控制电机转和停
 
 如果我们想让既能让电机正转，又能反转，那该怎么设计呢，如图8所示，为了简化，图中未画出续流二极管。K1和K2通的时候，电机正转，K3和K4通的时候，电机反转，这个电路结构称为H桥电路。
 
-![](/assets/EmbeddedSystem_S2_P7.png)
+![](/images/the-little-embedded-system/EmbeddedSystem_S2_P7.png)
 
 图8.H桥正反转
 
@@ -94,7 +98,7 @@ H桥可以让电机工作于四个状态，如下表所示。
 
 H桥调压调速具体玩法如图9所示。比如正向，下桥K2长通，然后给K1加PWM控制，K1导通的时候，电池电压加到电机上正向电流，如果图9的左边，K1关闭的时候，电池电机的电流通过K4的续流二极管进行续流，图9的右边。反转的话，依次类推即可。
 
-![](/assets/EmbeddedSystem_S2_P8.png)图9.H桥调压调速图
+![](/images/the-little-embedded-system/EmbeddedSystem_S2_P8.png)图9.H桥调压调速图
 
 电机控制的示例代码：
 

@@ -1,3 +1,9 @@
+---
+layout:     post
+title:      ch4-Matlab处理和验证图像算法
+category:   the-little-embedded-system
+---
+
 #### **1.先聊聊基于模型的设计**
 
 可以先看看知乎这篇文章《[基于模型设计——电力电子的利器](https://zhuanlan.zhihu.com/p/23149544)》
@@ -40,19 +46,19 @@ C&C++编译器，推荐VS2010
 
 1.在matlab的工作台中输入mex–setup命令（mex就是matlab支持交叉编译的工具）
 
-![](/assets/EmbeddedSystem_S4_P0.png)
+![](/images/the-little-embedded-system/EmbeddedSystem_S4_P0.png)
 
 2.回车后，会输出一段话，最后是“Would you  like mex to locate installed compilers\[y\]/n”是问你确定要为mex配置编译器？请输入y表示确定。
 
-![](/assets/EmbeddedSystem_S4_P1.png)
+![](/images/the-little-embedded-system/EmbeddedSystem_S4_P1.png)
 
 3.此时，会显示matlab搜索到已经安装好的VS2010，你要在Compiler：后面输入相应的选择序号1，回车.
 
-![](/assets/EmbeddedSystem_S4_P2.png)
+![](/images/the-little-embedded-system/EmbeddedSystem_S4_P2.png)
 
 4.在上图里，显示了你配置的编译器，最后需要输入y确认此配置，这样就OK了。
 
-![](/assets/EmbeddedSystem_S4_P3.png)
+![](/images/the-little-embedded-system/EmbeddedSystem_S4_P3.png)
 
 比如我们实现最简单的y=a+b这样一个加法操作。
 
@@ -65,7 +71,7 @@ function y=add(a,b)
 
 将上面的代码保存为add.m，这样在matlab的工作台就可以调用这个函数了，比如：
 
-![](/assets/EmbeddedSystem_S4_P4.png)
+![](/images/the-little-embedded-system/EmbeddedSystem_S4_P4.png)
 
 那这样一个简单的加法，我用C语言怎么实现呢？也很简单
 
@@ -101,7 +107,7 @@ void mexFunction ( int nlhs, mxArray *plhs[], int nrhs, const mxArray *prhs[] )
 
 将上面的这段代码，创建为了new\_add.c，然后在工作台上输入mex new\_add.c命令，编译无错，就可以使用了。
 
-![](/assets/EmbeddedSystem_S4_P5.png)
+![](/images/the-little-embedded-system/EmbeddedSystem_S4_P5.png)
 
 我们到底做了什么？其实，你只是把这个函数需要的两个参数a和b从matlab倒腾到C语言里面，进行了相应运算之后，再把输出结果从C语言里面倒腾到Matlab里而已。
 
@@ -147,7 +153,7 @@ Y = mxGetPr(plhs[0]);
 
 * 交叉编译不好的地方，就是不能进行单步调试，那出了问题，怎么办呢？用mexPrintf函数，与你用C里面的printf一样。
 
-![](/assets/EmbeddedSystem_S4_P6.png)
+![](/images/the-little-embedded-system/EmbeddedSystem_S4_P6.png)
 
 图6.Matlab矩阵顺序图
 
@@ -181,7 +187,7 @@ void mexFunction ( int nlhs, mxArray *plhs[], int nrhs, const mxArray *prhs[] )
 
 图像处理模块的结构图如图7所示，其中图像处理部分主要是imProc完成，与Matlab的mex接口由imCar完成。
 
-![](/assets/EmbeddedSystem_S1_P2.png)
+![](/images/the-little-embedded-system/EmbeddedSystem_S1_P2.png)
 
 图7.图像处理模块结构图
 
@@ -191,7 +197,7 @@ void mexFunction ( int nlhs, mxArray *plhs[], int nrhs, const mxArray *prhs[] )
 * gDir\_Mid：中距离方向偏差，主要用于转向PD控制
 * gDir\_Far：远距离方向偏差，主要用于识别入弯和出弯，提前进行加减速控制
 
-![](/assets/EmbeddedSystem_S4_P7.png)
+![](/images/the-little-embedded-system/EmbeddedSystem_S4_P7.png)
 
 图8.imProc模块图
 
@@ -365,7 +371,7 @@ mex -I"../ControlLib/Inc" ...,%包含ControlParam.h
 
 将matlab的工作目录设置为Graphic，然后运行Compile.m，默认选择的是txt文本图像（Image\_txt文件夹），1分钟之后，127张图像就全部处理结束啦（在Image\_txt下的solve文件下），速度是不是很快呀，哈哈哈，如图10所示。然后你就可以针对不同的路况，去优化算法，立刻就可以在Matlab上验证，知道所有的路况全部验证通过之后，再把代码烧到单片机里，进行真实赛道测试。
 
-， ![](/assets/EmbeddedSystem_S4_P10.png)、
+， ![](/images/the-little-embedded-system/EmbeddedSystem_S4_P10.png)、
 
 图10.处理结果
 
